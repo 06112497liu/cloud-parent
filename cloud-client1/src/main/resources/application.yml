@@ -1,0 +1,16 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: client1
+  jackson:
+    default-property-inclusion: non_null
+eureka:
+  instance:
+    prefer-ip-address: true
+    status-page-url-path: /client1/hello
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
