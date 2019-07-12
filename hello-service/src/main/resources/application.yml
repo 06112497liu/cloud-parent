@@ -1,0 +1,16 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: hello-service
+  jackson:
+    default-property-inclusion: non_null
+eureka:
+  instance:
+    prefer-ip-address: true # 以ip的方式来注册，而不是主机名
+    status-page-url-path: /hello/service/test
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer1:7001/eureka

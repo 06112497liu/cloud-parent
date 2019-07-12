@@ -1,0 +1,15 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: ribbon-consumer
+  jackson:
+    default-property-inclusion: non_null
+eureka:
+  instance:
+    prefer-ip-address: true # 以ip的方式来注册，而不是主机名
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer2:7002/eureka
